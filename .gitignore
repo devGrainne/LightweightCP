@@ -1,0 +1,70 @@
+# Frontend (chatgpt)
+
+# Logs
+logs
+*.log
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+frontend/node_modules
+frontend/dist
+frontend/dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+
+# Backend (chatgpt)
+backend/target/
+.mvn/wrapper/maven-wrapper.jar
+
+Thumbs.db
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Eclipse / STS
+.project
+.classpath
+.settings/
+.springBeans
+.sts4-cache/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Java compiled files
+*.class
+
+# Local env / secrets
+.env
+.env.*
+application-local.properties
+application-local.yml
+
+# If you later keep machine-specific config outside Git
+*.keystore
+*.jks
+
