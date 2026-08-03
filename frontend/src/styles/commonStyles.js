@@ -46,6 +46,12 @@ const commonStyles = {
     input: {
         padding: "10px",
         fontSize: "16px"
+    },
+
+    error: {
+        color: "red",
+        textAlign: "center",
+        margin: 0
     }
 };
 
