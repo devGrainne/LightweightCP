@@ -68,3 +68,6 @@ application-local.yml
 *.keystore
 *.jks
 
+# Java / Maven
+backend-spring/target/
+
