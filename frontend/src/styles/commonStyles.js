@@ -18,6 +18,12 @@ const commonStyles = {
         boxShadow: "0 0 10px rgba(0,0,0,0.2)"
     },
 
+    content: {
+        display: "flex",
+        flexDirection: "column",
+        width: "500px"
+    },
+
     heading: {
         textAlign: "center",
         marginBottom: "20px"
@@ -27,6 +33,19 @@ const commonStyles = {
         padding: "12px",
         fontSize: "16px",
         cursor: "pointer"
+    },
+
+    backButton: {
+        alignSelf: "flex-start",
+        marginBottom: "20px",
+        padding: "8px 16px",
+        fontSize: "14px",
+        cursor: "pointer"
+    },
+
+    input: {
+        padding: "10px",
+        fontSize: "16px"
     }
 };
 
