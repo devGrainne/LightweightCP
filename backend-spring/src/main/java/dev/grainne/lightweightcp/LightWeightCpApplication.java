@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication(
-	 exclude = {
-        DataSourceAutoConfiguration.class,
-        HibernateJpaAutoConfiguration.class
-    }
 )
+
 public class LightWeightCpApplication {
 
 	public static void main(String[] args) {
