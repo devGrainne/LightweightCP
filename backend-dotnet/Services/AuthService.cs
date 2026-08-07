@@ -25,8 +25,9 @@ public class AuthService
         var user = new User
         {
             Username = registrationRequest.Username,
-            // TODO do proper hash
-            PasswordHash = registrationRequest.Password
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(
+                registrationRequest.Password
+            )
         };
 
         _context.Users.Add(user);
@@ -37,17 +38,19 @@ public class AuthService
 
     public async Task<AuthResponse> Login(LoginRequest loginRequest)
     {
-        User? validUser = await _context.Users.SingleOrDefaultAsync(u => 
-            u.Username == loginRequest.Username && 
-            u.PasswordHash == loginRequest.Password);
+        User? user = await _context.Users.SingleOrDefaultAsync(u => 
+            u.Username == loginRequest.Username);
 
-        if(validUser != null)
+        if(user == null)
         {
-            return new AuthResponse("Login for " + loginRequest.Username + " succeeded.", true);
+            return new AuthResponse("Invalid username or password.", false);
         }
-        else
+
+        if(! BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash))
         {
-            return new AuthResponse("Login for " + loginRequest.Username + " failed. User or password unrecognised.", false);
+            return new AuthResponse("Invalid username or password.", false);
         }
+        
+        return new AuthResponse("Login succeeded.", true);
     }
-}
+}   
