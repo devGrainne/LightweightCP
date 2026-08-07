@@ -71,3 +71,20 @@ application-local.yml
 # Java / Maven
 backend-spring/target/
 
+# C# .NET build output
+**/bin/
+**/obj/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+*.user
+*.suo
+
+# User-specific .NET files
+*.csproj.user
+
+# Local configuration / secrets
+appsettings.Development.json
+appsettings.Local.json
+
