@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { loginUser } from "../services/authApi";
 import styles from "../styles/commonStyles";
 
 function LoginPage() {
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const message = location.state?.message;
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -54,6 +58,12 @@ function LoginPage() {
                 >
                     ← Back
                 </button>
+
+                {message && (
+                    <div className="success">
+                        {message}
+                    </div>
+                )}
 
                 <div style={styles.card}>
 

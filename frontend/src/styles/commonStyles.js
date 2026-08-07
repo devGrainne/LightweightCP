@@ -21,7 +21,8 @@ const commonStyles = {
     content: {
         display: "flex",
         flexDirection: "column",
-        width: "500px"
+        width: "500px",
+        gap: "20px"
     },
 
     heading: {
@@ -37,7 +38,6 @@ const commonStyles = {
 
     backButton: {
         alignSelf: "flex-start",
-        marginBottom: "20px",
         padding: "8px 16px",
         fontSize: "14px",
         cursor: "pointer"

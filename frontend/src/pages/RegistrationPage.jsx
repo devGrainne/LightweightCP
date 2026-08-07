@@ -39,7 +39,11 @@ function RegistrationPage() {
 
             console.log(result);
 
-            navigate("/login");
+            navigate("/login", {
+                state: {
+                    message: "Registration successful. Please log in."
+                }
+    });
 
         }
         catch (error) {
